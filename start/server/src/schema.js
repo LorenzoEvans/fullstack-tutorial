@@ -1,4 +1,3 @@
-import {typeDefs} from '../../../final/client/src/resolvers'
 const { gql } = require('apollo-server')
 // ^ Imports graphql from Apollo Server.
 
@@ -42,7 +41,9 @@ type Mission {
 } 
 
 type TripUpdateResponse {
- S
+ success: Boolean!
+ message: String
+ launches: [Launch]
 }
 
 enum PatchSize {
@@ -65,6 +66,4 @@ type Mutation {
 
 
 
-module.exports = {
- typeDefs,
-}
+module.exports = { typeDefs }
